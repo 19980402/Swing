@@ -1,7 +1,13 @@
-package demo;
+import java.util.Scanner;
 
-public class HelloWorld {
+public class shuji {
     public static void main(String[] args) {
-        System.out.println("Hello World！");
+        Scanner s=new Scanner(System.in);
+        while (true){
+            int a=s.nextInt();
+            int x=(int) (Math.random()*a*100%100);
+            int y=(int) (Math.random()*a*100%100);
+            System.out.println(x+","+y);
+        }
     }
 }
