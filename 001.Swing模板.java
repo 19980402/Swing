@@ -1,4 +1,5 @@
-功能：显示一个做标为R(100,100)的512px720p的窗体，模板代码。
+//功能：显示一个做标为R(100,100)的512px720p的窗体，模板代码。
+
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
