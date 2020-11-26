@@ -14,18 +14,18 @@ public class App {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                System.out.println(e.getX()+","+e.getY());
-                if (e.getX()<710&&e.getY()<320) {
+
+                if ((e.getX()<710&&e.getX()>700)&&(e.getY()<320&&e.getY()>300)) {
                     score1=1;
                     score=score1+score2+score3;
                     label_score.setText(String.valueOf(score));
-                }
-                if (e.getX()<871&&e.getY()<210) {
+                }else
+                if ((e.getX()<871&&e.getX()>860)&&(e.getY()<210&&e.getY()>190)) {
                     score2=1;
                     score=score1+score2+score3;
                     label_score.setText(String.valueOf(score));
-                }
-                if (e.getX()<975&&e.getY()<233) {
+                }else
+                if ((e.getX()<975&&e.getX()>950)&&(e.getY()<233&&e.getY()>200)) {
                     score3=1;
                     score=score1+score2+score3;
                     label_score.setText(String.valueOf(score));
@@ -45,7 +45,7 @@ public class App {
         background.setIcon(new ImageIcon(imgURL1));
         background.setBounds(0,0,1000,800);
         myPanel.add(background);
-        
+
         JFrame frame = new JFrame("找茬游戏");
         myPanel.setLayout(null);
         frame.setContentPane(myPanel);
