@@ -7,8 +7,7 @@ public class App {
     JLabel feiji = new JLabel();
     JLabel background = new JLabel();
     JTextArea jTextArea = new JTextArea();
-    int x = 300;
-    int y = 750;
+    int CHELL=10;
 
     //构造方法
     public App() {
@@ -17,20 +16,16 @@ public class App {
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
                 if (e.getKeyCode() == KeyEvent.VK_UP) {
-                    y -= 10;
-                    feiji.setBounds(x, y, 128, 128);
+                    feiji.setBounds(feiji.getX(), feiji.getY()-CHELL, 128, 128);
                 }
                 if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-                    y += 10;
-                    feiji.setBounds(x, y, 128, 128);
+                    feiji.setBounds(feiji.getX(), feiji.getY()+CHELL, 128, 128);
                 }
                 if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-                    x -= 10;
-                    feiji.setBounds(x, y, 128, 128);
+                    feiji.setBounds(feiji.getX()-CHELL, feiji.getY(), 128, 128);
                 }
                 if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-                    x += 10;
-                    feiji.setBounds(x, y, 128, 128);
+                    feiji.setBounds(feiji.getX()+CHELL, feiji.getY(), 128, 128);
                 }
             }
         });
