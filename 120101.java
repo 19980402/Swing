@@ -1,7 +1,4 @@
-package gks;
-
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -10,7 +7,7 @@ public class App {
     JLabel feiji = new JLabel();
     JLabel background = new JLabel();
     JTextArea jTextArea = new JTextArea();
-    int x = 200;
+    int x = 300;
     int y = 750;
 
     //构造方法
@@ -44,27 +41,26 @@ public class App {
     //显示窗体方法
     void go(){
         JFrame frame = new JFrame("我爱打飞机");
+        //隐藏控制台
         myPanel.setLayout(null);
-        myPanel.add(feiji);
-        myPanel.add(background);
         frame.setContentPane(myPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100,100,700,900);
-        jTextArea.setBounds(100, 700, 1, 1);
         jTextArea.setText("飞机控制台");
-        //frame.pack();
+        jTextArea.setBounds(100, 700, 1, 1);
         frame.setVisible(true);
         myPanel.add(feiji);
         myPanel.add(jTextArea);
         myPanel.add(background);
 
-        java.net.URL img = App.class.getResource("background.png");
-        background.setIcon(new ImageIcon(img));
+        java.net.URL img1 = App.class.getResource("images/plane0.png");
+        feiji.setIcon(new ImageIcon(img1));
+        feiji.setBounds(300,750,128,128);
+
+        java.net.URL img2 = App.class.getResource("images/background.png");
+        background.setIcon(new ImageIcon(img2));
         background.setBounds(0,0,700,900);
 
-        java.net.URL img2 = App.class.getResource("plane1.png");
-        feiji.setIcon(new ImageIcon(img2));
-        feiji.setBounds(200,750,128,128);
     }
     public static void main(String[] args) {
         new App().go();
