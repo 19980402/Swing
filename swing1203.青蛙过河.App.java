@@ -19,6 +19,7 @@ public class App {
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
                 textArea_A.append(String.valueOf(e.getKeyChar()));
+                //1
                 if (textArea_A.getText().equals("1")) {
                     qingwa1.setBounds(400,255, 128, 128);
                     textArea_A.setText("");
@@ -32,7 +33,7 @@ public class App {
                     textArea_A.setText("");
                     qingwa2.setEnabled(true);
                 }else
-
+                //2
                 if (textArea_A.getText().equals("4")) {
                     qingwa2.setBounds(400,255, 128, 128);
                     textArea_A.setText("");
@@ -45,7 +46,7 @@ public class App {
                     qingwa2.setBounds(600,25, 128, 128);
                     textArea_A.setText("");
                 }
-
+                //3
                 if (textArea_A.getText().equals("7")) {
                     qingwa3.setBounds(400,255, 128, 128);
                     textArea_A.setText("");
