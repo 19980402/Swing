@@ -11,7 +11,8 @@ public class App {
     JLabel qingwa3 = new JLabel();
     JLabel background = new JLabel();
     JTextArea textArea_A=new JTextArea();
-
+    Component jPanel;
+    int s=0;
     //构造方法
     public App() {
         myPanel.addKeyListener(new KeyAdapter() {
@@ -19,47 +20,56 @@ public class App {
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
                 textArea_A.append(String.valueOf(e.getKeyChar()));
-                //1
-                if (textArea_A.getText().equals("1")) {
-                    qingwa1.setBounds(400,255, 128, 128);
-                    textArea_A.setText("");
-                }else
-                if (textArea_A.getText().equals("2")) {
-                    qingwa1.setBounds(270,100, 128, 128);
-                    textArea_A.setText("");
-                }else
-                if (textArea_A.getText().equals("3")) {
-                    qingwa1.setBounds(700,25, 128, 128);
-                    textArea_A.setText("");
-                    qingwa2.setEnabled(true);
-                }else
-                //2
-                if (textArea_A.getText().equals("4")) {
-                    qingwa2.setBounds(400,255, 128, 128);
-                    textArea_A.setText("");
-                }else
-                if (textArea_A.getText().equals("5")) {
-                    qingwa2.setBounds(270,100, 128, 128);
-                    textArea_A.setText("");
-                }else
-                if (textArea_A.getText().equals("6")) {
-                    qingwa2.setBounds(600,25, 128, 128);
-                    textArea_A.setText("");
+                //第一只青蛙
+                if(s==0) {
+                    if (textArea_A.getText().equals("hello")) {
+                        qingwa1.setBounds(400, 255, 128, 128);
+                        textArea_A.setText("");
+                    }
+                    if (textArea_A.getText().equals("world")) {
+                        qingwa1.setBounds(270, 100, 128, 128);
+                        textArea_A.setText("");
+                    }
+                    if (textArea_A.getText().equals("hi")) {
+                        qingwa1.setBounds(700, 25, 128, 128);
+                        textArea_A.setText("");
+                        JOptionPane.showMessageDialog(jPanel, "第一只青蛙过来了，还有两只没过来哟！", "提示消息",JOptionPane.WARNING_MESSAGE);
+                        s++;
+                    }
                 }
-                //3
-                if (textArea_A.getText().equals("7")) {
-                    qingwa3.setBounds(400,255, 128, 128);
-                    textArea_A.setText("");
-                }else
-                if (textArea_A.getText().equals("8")) {
-                    qingwa3.setBounds(270,100, 128, 128);
-                    textArea_A.setText("");
-                }else
-                if (textArea_A.getText().equals("9")) {
-                    qingwa3.setBounds(500,25, 128, 128);
-                    textArea_A.setText("");
+                //第二只青蛙
+                if(s==1) {
+                    if (textArea_A.getText().equals("hello")) {
+                        qingwa2.setBounds(400, 255, 128, 128);
+                        textArea_A.setText("");
+                    }
+                    if (textArea_A.getText().equals("world")) {
+                        qingwa2.setBounds(270, 100, 128, 128);
+                        textArea_A.setText("");
+                    }
+                    if (textArea_A.getText().equals("hi")) {
+                        qingwa2.setBounds(600, 25, 128, 128);
+                        textArea_A.setText("");
+                        JOptionPane.showMessageDialog(jPanel, "第二只青蛙过来了，还有一只没过来哟！", "提示消息",JOptionPane.WARNING_MESSAGE);
+                        s++;
+                    }
                 }
-
+                //第三只青蛙
+                if(s==2) {
+                    if (textArea_A.getText().equals("hello")) {
+                        qingwa3.setBounds(400, 255, 128, 128);
+                        textArea_A.setText("");
+                    }
+                    if (textArea_A.getText().equals("world")) {
+                        qingwa3.setBounds(270, 100, 128, 128);
+                        textArea_A.setText("");
+                    }
+                    if (textArea_A.getText().equals("hi")) {
+                        qingwa3.setBounds(500, 25, 128, 128);
+                        textArea_A.setText("");
+                        JOptionPane.showMessageDialog(jPanel, "恭喜您过河成功啦！！", "提示消息",JOptionPane.WARNING_MESSAGE);
+                    }
+                }
             }
         });
     }
