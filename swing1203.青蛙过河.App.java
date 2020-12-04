@@ -26,6 +26,10 @@ public class App {
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
                 textArea_A.append(String.valueOf(e.getKeyChar()));
+                //文本输入大于5清空
+                if(textArea_A.getText().length()>5){
+                    textArea_A.setText("");
+                }
                 //第一只青蛙
                 if(s==0) {
                     if (qingwa1.getX()==80&&qingwa1.getY()==400&&textArea_A.getText().equals(list[0][0])) {
