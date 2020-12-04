@@ -10,9 +10,13 @@ public class App {
     JLabel qingwa2 = new JLabel();
     JLabel qingwa3 = new JLabel();
     JLabel background = new JLabel();
+    JLabel text1 = new JLabel();
+    JLabel text2 = new JLabel();
+    JLabel text3 = new JLabel();
     JTextArea textArea_A=new JTextArea();
     Component jPanel;
     int s=0;
+    String list[][]={{"hello","world","hi"},{"q","w","e"},{"a","s","d"}};
     //构造方法
     public App() {
         myPanel.addKeyListener(new KeyAdapter() {
@@ -22,15 +26,15 @@ public class App {
                 textArea_A.append(String.valueOf(e.getKeyChar()));
                 //第一只青蛙
                 if(s==0) {
-                    if (textArea_A.getText().equals("hello")) {
+                    if (textArea_A.getText().equals(list[0][0])) {
                         qingwa1.setBounds(400, 255, 128, 128);
                         textArea_A.setText("");
                     }
-                    if (textArea_A.getText().equals("world")) {
+                    if (textArea_A.getText().equals(list[0][1])){
                         qingwa1.setBounds(270, 100, 128, 128);
                         textArea_A.setText("");
                     }
-                    if (textArea_A.getText().equals("hi")) {
+                    if (textArea_A.getText().equals(list[0][2])) {
                         qingwa1.setBounds(700, 25, 128, 128);
                         textArea_A.setText("");
                         JOptionPane.showMessageDialog(jPanel, "第一只青蛙过来了，还有两只没过来哟！", "提示消息",JOptionPane.WARNING_MESSAGE);
@@ -39,15 +43,18 @@ public class App {
                 }
                 //第二只青蛙
                 if(s==1) {
-                    if (textArea_A.getText().equals("hello")) {
+                    text1.setText(list[1][0]);
+                    text1.setText(list[1][1]);
+                    text1.setText(list[1][2]);
+                    if (textArea_A.getText().equals(list[1][0])) {
                         qingwa2.setBounds(400, 255, 128, 128);
                         textArea_A.setText("");
                     }
-                    if (textArea_A.getText().equals("world")) {
+                    if (textArea_A.getText().equals(list[1][1])) {
                         qingwa2.setBounds(270, 100, 128, 128);
                         textArea_A.setText("");
                     }
-                    if (textArea_A.getText().equals("hi")) {
+                    if (textArea_A.getText().equals(list[1][2])) {
                         qingwa2.setBounds(600, 25, 128, 128);
                         textArea_A.setText("");
                         JOptionPane.showMessageDialog(jPanel, "第二只青蛙过来了，还有一只没过来哟！", "提示消息",JOptionPane.WARNING_MESSAGE);
@@ -56,15 +63,18 @@ public class App {
                 }
                 //第三只青蛙
                 if(s==2) {
-                    if (textArea_A.getText().equals("hello")) {
+                    text1.setText(list[2][0]);
+                    text1.setText(list[2][1]);
+                    text1.setText(list[2][2]);
+                    if (textArea_A.getText().equals(list[2][0])) {
                         qingwa3.setBounds(400, 255, 128, 128);
                         textArea_A.setText("");
                     }
-                    if (textArea_A.getText().equals("world")) {
+                    if (textArea_A.getText().equals(list[2][1])) {
                         qingwa3.setBounds(270, 100, 128, 128);
                         textArea_A.setText("");
                     }
-                    if (textArea_A.getText().equals("hi")) {
+                    if (textArea_A.getText().equals(list[2][2])) {
                         qingwa3.setBounds(500, 25, 128, 128);
                         textArea_A.setText("");
                         JOptionPane.showMessageDialog(jPanel, "恭喜您过河成功啦！！", "提示消息",JOptionPane.WARNING_MESSAGE);
@@ -114,6 +124,11 @@ public class App {
         URL img4 = App.class.getResource("images/background.png");
         background.setIcon(new ImageIcon(img4));
         background.setBounds(0,0,1024,600);
+
+        text1.setBounds(400,255,128,128);
+        text1.setText(list[0][0]);
+        text2.setBounds(270,100,128,128);
+        text2.setBounds(500,20,128,128);
 
     }
     public static void main(String[] args) {
