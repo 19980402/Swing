@@ -13,7 +13,7 @@ public class App {
             {10,11,0}
     };
     int cnt=0;
-    int cell=128;
+    int cell=129;
     //构造方法
     public App() {
         for (int i = 0; i <=11; i++) {
