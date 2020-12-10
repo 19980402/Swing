@@ -1,5 +1,7 @@
 # 9宫格矩阵显示
 import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +15,6 @@ public class App {
             {7,8,9},
             {10,11,0}
     };
-    int cnt=0;
     int cell=129;
     //构造方法
     public App() {
@@ -23,11 +24,21 @@ public class App {
         label_background.setBounds(0,0,384,512);
         myPanel.add(label_background);
 
+        myPanel.setFocusable(true);//键盘监听必须加panel面板的焦点获取才可以
+        //键盘监听事件
+        myPanel.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                
+
+            }
+        });
+
         new Zero().goLeft(array2d);//左移一个位置。注意：每次使用此行代码，改变的是原数组。
         new Zero().goLeft(array2d);//左移一个位置
         new Zero().goLeft(array2d);//左移一个位置
-        new Zero().goLeft(array2d);//左移一个位置
-        new Zero().goLeft(array2d);//左移一个位置
+
 
         //双重for循环，可以设置x，y坐标，还可以添加mypanel元素。
         for (int row = 0; row < array2d.length; row++) {
@@ -37,7 +48,6 @@ public class App {
                 label_list.get(row*3+column).setIcon(new ImageIcon(imgURL));
                 label_list.get(row*3+column).setBounds(column*cell,row*cell,cell,cell);
                 myPanel.add(label_list.get(row*3+column));
-                cnt++;
             }
         }
 
