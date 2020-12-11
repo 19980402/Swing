@@ -1,6 +1,7 @@
 # Zero.java 功能：上下左右移动0元素的算法
 
 public class Zero {
+
     void goLeft(int array2d[][]){
         //遍历开始
         for (int row = 0; row < array2d.length; row++) {
